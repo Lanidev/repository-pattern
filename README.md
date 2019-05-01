@@ -175,7 +175,7 @@ $this->pages->delete($id);
 Get a single row by a single column criteria.
 
 ```php
-$this->pages->read('title', $title);
+$this->pages->read('slug', $slug);
 ```
 
 #### Note : For the browse, read and paginate method you can specify the columns to fetch by passing an array in parameters

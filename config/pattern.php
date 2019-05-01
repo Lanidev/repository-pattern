@@ -4,8 +4,8 @@
 /* @package Lanidev\Pattern\config              */
 /*----------------------------------------------*/
 return [
-    'namespaces'  => [
-        'models'       => 'App',
-        'repositories' => 'App\Repositories'
+    'namespace'  => [
+        'model'       => 'App',
+        'repository'  => 'App\Repositories'
     ]
 ];

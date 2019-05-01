@@ -42,7 +42,7 @@ abstract class BaseRepository implements RepositoryInterface
      * @throws RepositoryException
      */
     public function makeModel() {
-        $namespace = Config::get('pattern.namespaces.models');
+        $namespace = Config::get('pattern.namespace.model');
         $model = $this->app->make("$namespace\\$this->model");
 
         if (!$model instanceof Model)

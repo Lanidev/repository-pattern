@@ -39,7 +39,7 @@ class ModelMakeCommand extends Command
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        $rootNamespace = Config::get('pattern.namespaces.models');
+        $rootNamespace = Config::get('pattern.namespace.model');
         return $rootNamespace;
     }
 

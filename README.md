@@ -70,7 +70,7 @@ use Lanidev\Pattern\Repositories\EloquentRepository as Repository;
 class PageRepository extends Repository
 {
     /**
-     * The repository model
+     * The repository models
      *
      * @var string
      */
@@ -117,11 +117,11 @@ use App\Repositories\PageRepository as Page;
 
 class PageController extends Controller {
 
-    private $pages;
+    private $page;
 
-    public function __construct(Page $pages)
+    public function __construct(Page $page)
     {
-        $this->pages = $pages;
+        $this->page = $page;
     }
 
     public function index()
@@ -151,31 +151,31 @@ public function paginate($perPage = 15, $columns = array('*'));
 
 Index all the pages:
 ```php
-$this->pages->browse();
+$this->page->browse();
 ```
 
 Create a new page:
 
 ```php
-$this->pages->add(Input::all());
+$this->page->add(Input::all());
 ```
 
-Update an existing page:
+Update existing page:
 
 ```php
-$this->pages->edit(Input::all(), $id);
+$this->page->edit(Input::all(), $id);
 ```
 
-Delete an existing page:
+Delete page:
 
 ```php
-$this->pages->delete($id);
+$this->page->delete($id);
 ```
 
 Get a single row by a single column criteria.
 
 ```php
-$this->pages->read('slug', $slug);
+$this->page->read('title', $title);
 ```
 
 #### Note : For the browse, read and paginate method you can specify the columns to fetch by passing an array in parameters

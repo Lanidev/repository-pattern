@@ -58,7 +58,7 @@ class RepositoryMakeCommand extends GeneratorCommand
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        $rootNamespace = Config::get('pattern.namespaces.repositories');
+        $rootNamespace = Config::get('pattern.namespace.repository');
         return $rootNamespace;
     }
 
@@ -118,7 +118,7 @@ class RepositoryMakeCommand extends GeneratorCommand
 
         $model = trim(str_replace('/', '\\', $model), '\\');
 
-        if (! Str::startsWith($model, $rootNamespace = Config::get('pattern.namespaces.models'))) {
+        if (! Str::startsWith($model, $rootNamespace = Config::get('pattern.namespace.model'))) {
             $model = "$rootNamespace\\$model";
         }
 

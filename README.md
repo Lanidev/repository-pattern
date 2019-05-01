@@ -70,7 +70,7 @@ use Lanidev\Pattern\Repositories\EloquentRepository as Repository;
 class PageRepository extends Repository
 {
     /**
-     * The repository models
+     * The repository model
      *
      * @var string
      */

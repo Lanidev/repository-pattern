@@ -7,7 +7,7 @@ use Lanidev\Pattern\Repositories\EloquentRepository as Repository;
 class DummyClass extends Repository
 {
     /**
-     * The repository models
+     * The repository model
      *
      * @var string
      */

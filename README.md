@@ -23,9 +23,9 @@ In this file you can modify the namespace of models and repositories for the fil
 
 ```php
 return [
-    'namespaces'  => [
-        'models'       => 'App',
-        'repositories' => 'App\Repositories'
+    'namespace'  => [
+        'model'       => 'App',
+        'repository'  => 'App\Repositories'
     ]
 ];
 ```
@@ -70,7 +70,7 @@ use Lanidev\Pattern\Repositories\EloquentRepository as Repository;
 class PageRepository extends Repository
 {
     /**
-     * The repository models
+     * The repository model
      *
      * @var string
      */
@@ -97,7 +97,7 @@ php artisan make:repository PageRepository --model=Page
 
 This will generate the same repository file as the one shown previously. In this case the option ```--model=``` is used to specify the ```$model``` variable.
 
-If you don't specify this option it will genrate the repository file with an empty ```$model```variable so you'll need to fill it manually.
+If you don't specify this option it will generate the repository file with an empty ```$model```variable so you'll need to fill it manually.
 
 If you specify a model who is not placed at the namespace chosen in the config file the terminal will ask you to create it.
 
@@ -117,11 +117,11 @@ use App\Repositories\PageRepository as Page;
 
 class PageController extends Controller {
 
-    private $page;
+    private $pages;
 
-    public function __construct(Page $page)
+    public function __construct(Page $pages)
     {
-        $this->page = $page;
+        $this->pages = $pages;
     }
 
     public function index()
@@ -151,31 +151,31 @@ public function paginate($perPage = 15, $columns = array('*'));
 
 Index all the pages:
 ```php
-$this->page->browse();
+$this->pages->browse();
 ```
 
 Create a new page:
 
 ```php
-$this->page->add(Input::all());
+$this->pages->add(Input::all());
 ```
 
 Update existing page:
 
 ```php
-$this->page->edit(Input::all(), $id);
+$this->pages->edit(Input::all(), $id);
 ```
 
-Delete page:
+Delete existing page:
 
 ```php
-$this->page->delete($id);
+$this->pages->delete($id);
 ```
 
 Get a single row by a single column criteria.
 
 ```php
-$this->page->read('title', $title);
+$this->pages->read('slug', $slug);
 ```
 
 #### Note : For the browse, read and paginate method you can specify the columns to fetch by passing an array in parameters

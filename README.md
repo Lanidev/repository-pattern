@@ -117,11 +117,11 @@ use App\Repositories\PageRepository as Page;
 
 class PageController extends Controller {
 
-    private $page;
+    private $pages;
 
-    public function __construct(Page $page)
+    public function __construct(Page $pages)
     {
-        $this->page = $page;
+        $this->pages = $pages;
     }
 
     public function index()
@@ -151,31 +151,31 @@ public function paginate($perPage = 15, $columns = array('*'));
 
 Index all the pages:
 ```php
-$this->page->browse();
+$this->pages->browse();
 ```
 
 Create a new page:
 
 ```php
-$this->page->add(Input::all());
+$this->pages->add(Input::all());
 ```
 
-Update existing page:
+Update an existing page:
 
 ```php
-$this->page->edit(Input::all(), $id);
+$this->pages->edit(Input::all(), $id);
 ```
 
-Delete page:
+Delete an existing page:
 
 ```php
-$this->page->delete($id);
+$this->pages->delete($id);
 ```
 
 Get a single row by a single column criteria.
 
 ```php
-$this->page->read('title', $title);
+$this->pages->read('title', $title);
 ```
 
 #### Note : For the browse, read and paginate method you can specify the columns to fetch by passing an array in parameters

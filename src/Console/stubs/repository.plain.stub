@@ -1,0 +1,15 @@
+<?php
+
+namespace DummyNamespace;
+
+use Lanidev\Pattern\Repositories\EloquentRepository as Repository;
+
+class DummyClass extends Repository
+{
+    /**
+     * The repository models
+     *
+     * @var string
+     */
+    protected $model = '';
+}

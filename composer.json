@@ -1,0 +1,34 @@
+{
+    "name": "lanidev/repository-pattern",
+    "description": "Laravel package with improvements by repository pattern",
+    "keywords": ["laravel", "contract", "interface", "repository", "eloquent", "pattern"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lamy Nicolas",
+            "email": "webdev.lamy@gmail.com"
+        }
+    ],
+
+    "require": {},
+    "autoload": {
+       "psr-4": {
+           "Lanidev\\Pattern\\": "src/"
+       }
+    },
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "optimize-autoloader": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lanidev\\Pattern\\Providers\\ArtisanServiceProvider",
+                "Lanidev\\Pattern\\Providers\\ConfigServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
